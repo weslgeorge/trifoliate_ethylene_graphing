@@ -13,7 +13,7 @@ library(ggrepel)
 
 data_file_df<- read.csv(file = "test_data.csv") # loads in data, be sure to set working directory to source file location
 
-# this data file has a large series of collumns with each row representing an individual plant and 
+# this data file has a large series of columns with each row representing an individual plant and 
 # columns for all the important test information we want to plot
 # specifically we want to plot the standardized height values from the Gas Chromatograph under columns 
 # water treatment, treatment 1, and treatment 2
@@ -50,6 +50,8 @@ all_data_long$Date.Tested <- as.factor(all_data_long$Date.Tested) # changes the 
 all_data_long$Date.Tested = ordered(all_data_long$Date.Tested,
                                   levels = c("10/27/22","1/23/23","2/21/23")) # change the order of this list (c()) to change the order of the levels
 levels(all_data_long$Date.Tested) # use to double check the order of levels is as intended 
+
+
 #################### Plotting in ggplot2 ##########################
 
 # now we can make some plots! Ethylene data is highly variable day by day, but consistent with comparing lines 
